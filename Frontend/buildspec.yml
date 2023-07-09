@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - pyenv install 2.7.18
+      - pyenv global 2.7.18
+      - npm install
+    
+  build:
+    commands:
+      - npm run start
+
+artifacts:
+  files:
+    - '**/*'

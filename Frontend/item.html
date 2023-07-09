@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Format Cafe</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Format Cafe</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link for-modal" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>대시보드</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">            
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseItem"
+                    aria-expanded="true" aria-controls="collapseItem">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    <span>상품 관리</span>
+                </a>
+                <div id="collapseItem" class="collapse" aria-labelledby="headingItem" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item for-modal" href="item_add.html">상품 등록</a>
+                        <a class="collapse-item for-modal" href="item_tables.html">상품 목록</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrder"
+                    aria-expanded="true" aria-controls="collapseOrder">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    <span>주문 관리</span>
+                </a>
+                <div id="collapseOrder" class="collapse" aria-labelledby="headingOrder" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item for-modal" href="order_tables.html">주문 목록</a>
+                        <a class="collapse-item for-modal" href="pay_tables.html">결제 목록</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link for-modal" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>통계</span></a>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link for-modal" href="user_tables.html">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>고객 관리</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link for-modal" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>로그아웃</span></a>
+            </li>
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- item Content -->
+                    <div class="card shadow mb-4">
+
+                        <!-- header -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">상품 정보</h6>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d-flex align-items-center justify-content-center mr-2">
+                                    <button type="button" class="btn btn-danger btn-icon-split" data-toggle="modal" data-target="#deleteModal">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span class="text">삭제하기</span>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mr-2">
+                                    <button id="edit" class="btn btn-warning btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i id="editBtnImg" class="fas fa-wrench"></i>
+                                        </span>
+                                        <span id="editText" class="text">수정하기</span>
+                                    </button>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center ">
+                                    <button id="goBack" class="btn btn-primary btn-icon-split for-modal">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                                        <span class="text">뒤로가기</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of item header-->
+
+                        <!-- item item detail -->
+
+                        <div class="card-body">
+                            
+                            <!-- Content Row -->
+                            <div class="row">
+
+                                
+                                <!-- Pending Requests Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-warning shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">상품 ID</div>
+                                                    <input type="text" class="form-control bg-white border-0 small font-weight-bold text-gray-800" id="item_code" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Earnings (Monthly) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">상품 이름</div>
+                                                    <input type="text" class="form-control bg-white border-0 small font-weight-bold text-gray-800" id="item_name" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Earnings (Monthly) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-info shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">상품 상태</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        <select class="custom-select custom-select-sm form-control form-control-sm" id="item_status" disabled>
+                                                            <option value="default">--- 선택하세요 ---</option>
+                                                            <option value="sales">판매</option>
+                                                            <option value="soldout">품절</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <!-- Earnings (Monthly) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">상품 가격</div>
+                                                    <input type="number" class="form-control bg-white border-0 small font-weight-bold text-gray-800" id="item_price" step="500" min="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- row -->
+                            <div class="row">
+
+                                <!-- 상품 사진 -->
+                                <div class="col-xl-4 col-lg-5">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">상품 사진</h6>
+                                            <div class="dropdown no-arrow">
+                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                                                    style="display: none;">
+                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="#" id="fileSelect">사진 등록</a>
+                                                    <a class="dropdown-item" href="#" id="fileChange">사진 변경</a>
+                                                    <a class="dropdown-item" href="#" id="fileDelete">사진 삭제</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="chart-pie pt-4 pb-2" >
+                                                <canvas id="item_img"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /상품 사진-->
+
+
+                                <!-- 상품 설명 -->
+                                <div class="col-xl-8 col-lg-7">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3 d-flex flex-row align-items-center">
+                                            <h6 class="m-0 font-weight-bold text-primary">상품 설명</h6>
+                                        </div>
+                                        <div class="card-body h5 mb-0 font-weight-bold text-gray-800">
+                                            <textarea class="form-control bg-white border-0 small" id="item_desc" rows="11" cols="59" disabled></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /상품 설명 -->    
+
+                            </div>
+                            <!-- End of row -->
+
+
+                        </div>
+                        <!-- End of item detail -->
+                    </div>
+                    <!-- item content -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Format Cafe 2023</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+            
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">로그아웃 하시겠습니까?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">로그아웃 하시려면 아래의 "로그아웃"을 선택해주세요.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <button class="btn btn-primary" id="logoutOk">로그아웃</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">정말로 삭제 하시겠습니까?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">삭제 하시려면 아래의 "삭제"을 선택해주세요.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <button class="btn btn-danger" id="deleteConfirm">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- editPageMove Modal-->
+    <div class="modal fade" id="editingMoveModal" tabindex="-1" role="dialog" aria-labelledby="editingMoveModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editingMoveModalLabel">정말로 나가시겠습니까?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">변경된 내용이 있습니다. 저장하지 않고 떠나시겠습니까?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <button class="btn btn-danger" id="exit">나가기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- 아이템 상세페이지 기능들 -->
+    <script src="itemFunction.js"></script>
+    <!-- 로그아웃 기능 -->
+    <script src="user.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var isEditing = false;
+
+            // 1번째로 페이지 동작
+            updateUI(isEditing);
+
+            // 데이터 베이스의 초기 데이터를 담기 위한 original_data
+            var original_data = {
+                code: "",
+                name: "",
+                price: 0,
+                content: ""
+            };
+
+            // 아이템 목록에서 넘어온 url 에서 값 가져오기
+            var urlIndex = window.location.href;
+            urlIndex = urlIndex.split("?")[1];
+
+            // code 값 얻기 (urlIndex = code=AD3 이런 형식)
+            var params = new URLSearchParams(urlIndex);
+            var codeValue = params.get('code');
+
+
+            // 페이지에 데이터베이스 값 가져와서 띄워주고 성공 시 original_data에 저장
+            setItemValue(codeValue, original_data);
+
+
+            // 삭제 함수(Modal 안의 삭제 버튼 클릭 시)
+            deleteItem(codeValue);
+
+
+            // 수정하기 버튼 함수
+            editItem(isEditing, original_data);            
+
+
+            // 로그아웃 버튼 클릭 함수
+            logout();
+
+            // 뒤로 가기 버튼 및 페이지 이탈 시 데이터 처리
+            goBack(isEditing, original_data);
+
+            // 사이드바 A태그 이동 시 isEditing 값 처리
+            aTagTo(isEditing ,original_data);
+
+            
+
+        });
+    </script>
+
+
+</body>
+
+</html>
